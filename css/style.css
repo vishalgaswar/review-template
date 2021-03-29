@@ -7,7 +7,7 @@ body{
 .title h2{
     color: #fff;
     font-family: 'Times New Roman', Times, serif;
-
+    font-weight: 600;
 }
 .underline{
     width: 120px;
@@ -15,4 +15,21 @@ body{
     background-color: aliceblue;
     margin: auto;
     border-radius: 50px;
+}
+.review{
+    width: 50%;
+    background-color: #fff;
+    border-radius: 2%;
+    margin: auto;
+    position: relative;
+    top: 25px;
+    height: auto;
+}
+.img-container img{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    position: relative;
+    top: 25px;
+
 }
