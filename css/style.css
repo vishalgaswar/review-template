@@ -33,3 +33,11 @@ body{
     top: 25px;
 
 }
+h4{
+    margin-top: 30px;
+    padding-top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#job{
+    padding: 10px;
+}
