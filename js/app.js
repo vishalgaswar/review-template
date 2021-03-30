@@ -1,16 +1,7 @@
 const reviews = [
-    {
-    id: 0,
-    name: "Vishal Aswar",
-    job: "Software developer",
-    img:
-      "https://i.ytimg.com/vi/_-VE0hDnH5A/hqdefault_live.jpg",
-    text:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  },
-    {
+  {
     id: 1,
-    name: "Vishal Aswar",
+    name: "susan smith",
     job: "web developer",
     img:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
@@ -45,29 +36,56 @@ const reviews = [
       "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
   },
 ];
-// select Items
+// select items
 const img = document.getElementById("person-img");
 const author = document.getElementById("author");
 const job = document.getElementById("job");
 const info = document.getElementById("info");
 
-// selecting btns
-const prevBtn = document.querySelector("prev-btn");
-const nextBtn = document.querySelector("next-btn");
-const randomBtn = document.querySelector("random-btn");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const randomBtn = document.querySelector(".random-btn");
 
-// set starting Items
+// set starting item
 let currentItem = 0;
 
-//load initial item
-window.addEventListener("DOMContentLoaded", function() {
-    const item = reviews[currentItem];
-    img.src = item.img;
-    author.textContent = item.name;
-    job.textContent = item.job;
-    info.textContent = item.text;
-    
+// load initial item
+window.addEventListener("DOMContentLoaded", function () {
+  const item = reviews[currentItem];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
 });
 
-// load
+// show person based on item
+function showPerson(person) {
+  const item = reviews[person];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+}
+// show next person
+nextBtn.addEventListener("click", function () {
+  currentItem++;
+  if (currentItem > reviews.length - 1) {
+    currentItem = 0;
+  }
+  showPerson(currentItem);
+});
+// show prev person
+prevBtn.addEventListener("click", function () {
+  currentItem--;
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1;
+  }
+  showPerson(currentItem);
+});
+// show random person
+randomBtn.addEventListener("click", function () {
+  console.log("hello");
 
+  currentItem = Math.floor(Math.random() * reviews.length);
+  showPerson(currentItem);
+});
